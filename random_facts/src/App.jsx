@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-function Facts() {
+function App() {
     const [fact, setFact] = useState('');
     const [copied, setCopied] = useState(false);
     const copy = () => {
@@ -10,7 +10,7 @@ function Facts() {
     const fetchFact = async () => {
         try {
             const res = await fetch('https://uselessfacts.jsph.pl/api/v2/facts/random');
-                if (!res.ok) {
+            if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);
                 }
             const data = await res.json();
